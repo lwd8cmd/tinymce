@@ -147,7 +147,8 @@ const getImageMimeType = (ext: string): string => {
     pjp: 'jpeg',
     svg: 'svg+xml'
   };
-  return Tools.hasOwn(mimeOverrides, ext) ? 'image/' + mimeOverrides[ext] : 'image/' + ext;
+  const lowercaseExt = ext.toLowerCase();
+  return Tools.hasOwn(mimeOverrides, lowercaseExt) ? 'image/' + mimeOverrides[lowercaseExt] : 'image/' + lowercaseExt;
 };
 
 export {
